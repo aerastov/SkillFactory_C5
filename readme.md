@@ -29,15 +29,27 @@
 ## Установка и запуск конвектора валют
 Установить интерпретатор Python версии 3.8 или выше `https://www.python.org/`  
 В виртуальное окружение или глобально установить библиотеку `pip install pytelegrambotapi`  
-Клонировать репозиторий `git clone https://github.com/aerastov/SkillFactory_C5.git`  
-
+Клонировать репозиторий `git clone https://github.com/aerastov/SkillFactory_C5.git`
 В консоли перейти в папку проекта  
 Запустить файл: `python currency_convertor.py`  
 Далее в Telegram подключиться к чату @SkillFactory_my_bot  
 https://t.me/SkillFactory_my_bot  
-и стартовать бота командой /start  
+Запустить бота командой /start  
 Ввести запрос в формате (пример): доллар рубль 100  
 Ответом получим сколько будет в рублях 100 долларов по текущему курсу  
+
+## Установка docker
+Для lunix систем:   
+```curl -fsSL https://get.docker.com/ | sh``` //Установка Docker  
+Для Windows или Macos:  
+```https://www.docker.com/``` //Установка Docker Desktop
+## Запуск бота:
+После установки docker в командной строке набираем:  
+```docker run -d aerastov/currency_convertor:27.08.2022```  
+Данной командой скачается с dockerhub образ, и в docker стартует контейнер с ботом.
+Внимание! При опросе telegram методом bot.polling, бот периодически останавливается из-за превышения ожидания отклика от 
+сокета сервера telegram. Для избежания данной проблемы рекомендуется запускать контейнер с ключем   
+```--restart always.```
 
 
 
